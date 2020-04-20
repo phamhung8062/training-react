@@ -25,18 +25,19 @@ module.exports = {
     'react/forbid-prop-types': 0,
     'react/require-default-props': 0,
     'react/state-in-constructor': 0,
-    'prettier/prettier': ['error'],
-    "no-unused-vars":1,
-    "react/prefer-stateless-function":0,
-    "import/newline-after-import":0,
-    "no-use-before-define":0,
-    "no-param-reassign":0,
-    "import/prefer-default-export":0
+    //'prettier/prettier': ['error'],
+    'no-unused-vars': 1,
+    'react/prefer-stateless-function': 0,
+    'import/newline-after-import': 0,
+    'no-use-before-define': 0,
+    'no-param-reassign': 0,
+    'import/prefer-default-export': 0,
+    'react/jsx-uses-vars': 2,
   },
   plugins: ['prettier'],
-  env:{
-    "es6":true,
-    "browser":true,
-    "node":true
-  }
+  env: {
+    es6: true,
+    browser: true,
+    node: true,
+  },
 };
