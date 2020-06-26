@@ -8,9 +8,10 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Icon from '@material-ui/core/Icon';
+import PropTypes from 'prop-types';
 class TaskItem extends Component {
   render() {
-    const { classes, task, status } = this.props;
+    const { classes, task, status, onClickEdit, onClickDelete } = this.props;
     return (
       <Card className={classes.card} key={task.id}>
         <CardContent>
@@ -25,10 +26,20 @@ class TaskItem extends Component {
           <p>{task.description}</p>
         </CardContent>
         <CardActions className={classes.cartActions}>
-          <Fab color="primary" className="classes.fab" size="small">
+          <Fab
+            color="primary"
+            className="classes.fab"
+            size="small"
+            onClick={onClickEdit}
+          >
             <Icon fontSize="small">edit_icon</Icon>
           </Fab>
-          <Fab color="secondary" className="classes.fab" size="small">
+          <Fab
+            color="secondary"
+            className="classes.fab"
+            size="small"
+            onClick={onClickDelete}
+          >
             <Icon fontSize="small">delete_icon</Icon>
           </Fab>
         </CardActions>
@@ -36,5 +47,11 @@ class TaskItem extends Component {
     );
   }
 }
-
+TaskItem.propTypes = {
+  classes: PropTypes.object,
+  task: PropTypes.object,
+  status: PropTypes.object,
+  onClickEdit: PropTypes.func,
+  onClickDelete: PropTypes.func,
+};
 export default withStyles(styles)(TaskItem);
